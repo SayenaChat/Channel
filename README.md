@@ -62,8 +62,17 @@ define("token","9c6f25afa2a395ff561c23231cbb2d8e");
     private $name = "sayena";
 ```
 For first time you should create a database with `sayena` name.
-## Step 3
+### Step 3
 Create DataBase in **phpMyAdmin** width `sayena` name and import `DataBase/SayenaChat.sql` in this database
 
-## Finish
+### Finish
 After completing these steps, the SayenaChat online communication channel is ready to use, and you can share it with others.
+
+## Show link of Channel
+- **Browse `showlink.php`**:
+
+After setting up channel open `showlink.php` in your `browser` and copy output
+```text
+https://say.na/c/sayenachat.com/?secret=9c6f25afa2a395ff561c23231cbb2d8e
+```
+- Copy the **output link** and share it for your friends
