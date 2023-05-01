@@ -1,9 +1,13 @@
 <?php
-
-define("token","45375192bebd6cfeea1d613966700a1b");
+/*
+ *  Sayena Chat Communication Channel
+ *  (c) 2023 Sayena Team, Free Software MIT License
+ *  Sayena v0.1-alpha
+ */
 
 class SayenaChannel
 {
+    private $secret = "45375192bebd6cfeea1d613966700a1b";
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
@@ -27,12 +31,12 @@ class SayenaChannel
     }
     public function secret()
     {
-        return token==$_GET['secret'];
+        return $this->secret==$_GET['secret'];
     }
     public function access()
     {
-        $accessx = $_GET['access'];
-        $s = $this->array("SELECT * FROM users WHERE access='$accessx'");
+        $access = $_GET['access'];
+        $s = $this->array("SELECT * FROM users WHERE access='$access'");
         return isset($s);
     }
     function assoc ($sql)
