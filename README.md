@@ -26,33 +26,32 @@ After downloading SayenaChat, open the config.php file and follow the instructio
 
 Once you have completed these steps, **SayenaChat** should be connected to your MySQL database and ready to use.
 
-- Edit token constant
+- Edit secret constant
 ```html
-define("token","45375192bebd6cfeea1d613966700a1b");
-
 class SayenaChannel
 {
+    private $secret = "9c6f25afa2a395ff561c23231cbb2d8e";
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
     private $name = "sayena";
 ...
 ```
-Edit value of `token` constant; for example open `python3` and write:
+Edit value of `secret` constant; for example open `python3` and write:
 ```python
 import hashlib
 print (hashlib.md5("SayenaExample".encode()).hexdigest())
 ```
-Copy **output** of this code and **paste** in **token** constant:
+Copy **output** of this code and **paste** in **secret** constant:
 ```shell
 $ python3
 >>> import hashlib
->>> print (hashlib.md5("SayenaExample"))
+>>> print (hashlib.md5("SayenaExample".encode()).hexdigest())
 9c6f25afa2a395ff561c23231cbb2d8e
 ```
-Copy `9c6f25afa2a395ff561c23231cbb2d8e` to value of `token`:
+Copy `9c6f25afa2a395ff561c23231cbb2d8e` to value of `secret`:
 ```html
-define("token","9c6f25afa2a395ff561c23231cbb2d8e");
+    private $secret = "9c6f25afa2a395ff561c23231cbb2d8e";
 ```
 - Connect to DataBase
 ```html
