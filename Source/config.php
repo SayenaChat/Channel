@@ -7,7 +7,7 @@
 
 class SayenaChannel
 {
-    private $secret = "45375192bebd6cfeea1d613966700a1b";
+    public $secret = "45375192bebd6cfeea1d613966700a1b";
     private $host = "localhost";
     private $user = "root";
     private $pass = "";

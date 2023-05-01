@@ -30,7 +30,7 @@ Once you have completed these steps, **SayenaChat** should be connected to your 
 ```html
 class SayenaChannel
 {
-    private $secret = "9c6f25afa2a395ff561c23231cbb2d8e";
+    public $secret = "9c6f25afa2a395ff561c23231cbb2d8e";
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
@@ -51,7 +51,7 @@ $ python3
 ```
 Copy `9c6f25afa2a395ff561c23231cbb2d8e` to value of `secret`:
 ```html
-    private $secret = "9c6f25afa2a395ff561c23231cbb2d8e";
+    public $secret = "9c6f25afa2a395ff561c23231cbb2d8e";
 ```
 - Connect to DataBase
 ```html
