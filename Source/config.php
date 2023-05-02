@@ -59,7 +59,8 @@ class SayenaChannel
         $to = $_GET['to'];
         $access = $_GET['access'];
         $sender = $this->array("SELECT id FROM users WHERE access='$access';")[0];
-        return $this->assoc("SELECT * FROM chats WHERE (sender='$sender' AND giver='$to') OR (sender='$to' AND giver='$sender');");
+        $assoc2 = $this->assoc("SELECT * FROM chats WHERE (sender='$sender' AND giver='$to') OR (sender='$to' AND giver='$sender');");
+        $this->query("DELETE FROM chats WHERE (sender='$sender' AND giver='$to') OR (sender='$to' AND giver='$sender');");
     }
     public function Connect($key)
     {
