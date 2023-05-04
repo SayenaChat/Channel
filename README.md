@@ -4,7 +4,7 @@ Online communication channel based on PHP programming language for SayenaChat as
 ## Create Channel
 ### Step 1
 To create an online communication channel for SayenaChat, all you need to do is copy the existing code in the Source folder and upload it to your hosting or online server. Once you have done this, you can configure the database settings to get it up and running.
-- Download From **Github**
+- Download From **GitHub**
 ```shell
 git clone https://github.com/SayenaChat/Channel
 ```
