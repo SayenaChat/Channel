@@ -64,7 +64,7 @@ class SayenaChannel
     public function Connect()
     {
         $date = date("Y/m/d H:i:s");
-        $access = hash("sha512",$date);
+        $access = hash("md5",$date);
         $this->query("INSERT INTO users (id,date,access) VALUES (NULL,'$date','$access');");
         return $access;
     }
