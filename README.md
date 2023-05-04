@@ -30,28 +30,19 @@ Once you have completed these steps, **SayenaChat** should be connected to your 
 ```html
 class SayenaChannel
 {
-    public $secret = "9c6f25afa2a395ff561c23231cbb2d8e";
+    /* Secret code */
+    public  $secret = hash("md5","Secret-Test");
+
+    /* MySQL DataBase Connection */
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
     private $name = "sayena";
+    private $conn;
 ...
 ```
-Edit value of `secret` constant; for example open `python3` and write:
-```python
-import hashlib
-print (hashlib.md5("SayenaExample".encode()).hexdigest())
-```
-Copy **output** of this code and **paste** in **secret** constant:
-```shell
-$ python3
->>> import hashlib
->>> print (hashlib.md5("SayenaExample".encode()).hexdigest())
-9c6f25afa2a395ff561c23231cbb2d8e
-```
-Copy `9c6f25afa2a395ff561c23231cbb2d8e` to value of `secret`:
 ```html
-    public $secret = "9c6f25afa2a395ff561c23231cbb2d8e";
+    public $secret = hash("md5","MyNewChannel");
 ```
 - Connect to DataBase
 ```html

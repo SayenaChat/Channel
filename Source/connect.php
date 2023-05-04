@@ -2,7 +2,7 @@
 /*
  *  Sayena Chat Communication Channel
  *  (c) 2023 Sayena Team, Free Software MIT License
- *  Sayena v0.1-alpha
+ *  Sayena v0.2-beta
  */
 
 require "config.php";
@@ -14,9 +14,5 @@ if (isset($_GET['secret'])&&!empty($_GET['secret']))
         $channel->SQLConnect();
         echo $channel->Connect();
     }
-    else
-        $channel->AccessDenied();
 }
-else
-    $channel->AccessDenied();
 ?>
