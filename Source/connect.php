@@ -7,7 +7,7 @@
 
 require "config.php";
 $channel = new SayenaChannel();
-if (isset($_GET['secret'])&&!empty($_GET['secret']))
+if ($channel->check('secret'))
 {
     if ($channel->secret())
     {

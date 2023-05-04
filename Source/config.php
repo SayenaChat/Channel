@@ -17,6 +17,12 @@ class SayenaChannel
     private $name = "sayena";
     private $conn;
 
+    // Check exists get datas
+    function check ($var)
+    {
+        return isset($_GET[$var])&&!empty($_GET[$var]);
+    }
+
     // SQL DataBase connector
     function SQLConnect()
     {
