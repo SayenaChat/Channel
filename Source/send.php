@@ -5,6 +5,11 @@
  *  Sayena v0.2-beta
  */
 
+/*
+   send.php: Send a message to another
+   send.php? secret=[secret-key]& access=[access-key]& to=[another-id] data=[encrypted-message]
+*/
+
 require "config.php";
 $channel = new SayenaChannel();
 $channel->SQLConnect();

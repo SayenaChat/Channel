@@ -5,11 +5,19 @@
  *  Sayena v0.2-beta
  */
 
+/*  showlink.php: Give all messages from another in channel */
+
 require "config.php";
+
+// Get channel data
 $channel = new SayenaChannel();
 $host = $_SERVER['HTTP_HOST'];
 $secret=$channel->secret;
-exit "https://say.na/c/$host/secret=$secret";
-unlink("showlink.php"); // Remove showlink
+
+// Print access link
+echo "https://say.na/c/$host/secret=$secret";
+
+// Remove showlink
+unlink("showlink.php");
 
 ?>

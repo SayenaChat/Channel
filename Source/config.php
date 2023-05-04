@@ -5,6 +5,8 @@
  *  Sayena v0.2-beta
  */
 
+/* config.php: Configuration of SayenaChannel */
+
 class SayenaChannel
 {
     /* Secret code */

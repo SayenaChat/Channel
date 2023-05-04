@@ -5,14 +5,18 @@
  *  Sayena v0.2-beta
  */
 
+/*
+   connect.php: Connect to channel
+   connect.php? secret=[secret-key]
+*/
+
 require "config.php";
 $channel = new SayenaChannel();
+$channel->SQLConnect();
+
 if ($channel->check('secret'))
 {
     if ($channel->secret())
-    {
-        $channel->SQLConnect();
         echo $channel->Connect();
-    }
 }
 ?>
