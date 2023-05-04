@@ -61,22 +61,12 @@ class SayenaChannel
         $sender = $this->array("SELECT id FROM users WHERE access='$access';")[0];
         return $this->assoc("SELECT * FROM chats WHERE (sender='$sender' AND giver='$to') OR (sender='$to' AND giver='$sender');");
     }
-    public function Connect($key)
+    public function Connect()
     {
-        $arrays = $this->array("SELECT * FROM users WHERE pkey='$key'");
-        if (!isset($arrays))
-        {
-            $date = date("Y/m/d H:i:s");
-            $access = hash("sha512",$key.$date);
-            $this->query("INSERT INTO users (id,pkey,date,access) VALUES (NULL,'$key','$date','$access');");
-            return $access;
-        }
-        else
-            return $this->AccessDenied();
-    }
-    public function Get($key)
-    {
-        return $this->array("SELECT id FROM users WHERE pkey='$key'")[0];
+        $date = date("Y/m/d H:i:s");
+        $access = hash("sha512",$date);
+        $this->query("INSERT INTO users (id,date,access) VALUES (NULL,'$date','$access');");
+        return $access;
     }
     public function AccessDenied(Type $var = null)
     {

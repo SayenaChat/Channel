@@ -7,12 +7,12 @@
 
 require "config.php";
 $channel = new SayenaChannel();
-if (isset($_GET['key'])&&isset($_GET['secret'])&&!empty($_GET['key'])&&!empty($_GET['secret']))
+if (isset($_GET['secret'])&&!empty($_GET['secret']))
 {
     if ($channel->secret())
     {
         $channel->SQLConnect();
-        echo $channel->Connect($_GET['key']);
+        echo $channel->Connect();
     }
     else
         $channel->AccessDenied();
