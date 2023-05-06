@@ -3,9 +3,10 @@
  *  Sayena Chat Communication Channel
  *  (c) 2023 Sayena Team, Free Software MIT License
  *  Sayena v0.2-beta
+ *
+ *  showlink/  Give all messages from another in channel
+ *
  */
-
-/*  showlink.php: Give all messages from another in channel */
 
 require "config.php";
 

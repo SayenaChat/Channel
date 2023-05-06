@@ -3,9 +3,10 @@
  *  Sayena Chat Communication Channel
  *  (c) 2023 Sayena Team, Free Software MIT License
  *  Sayena v0.2-beta
+ *
+ *  config/  Configuration of SayenaChannel
+ *
  */
-
-/* config.php: Configuration of SayenaChannel */
 
 class SayenaChannel
 {
@@ -18,6 +19,17 @@ class SayenaChannel
     private $pass = "";
     private $name = "sayena";
     private $conn;
+
+    /* Version */
+    public  $version = "0.2-beta";
+    public  $github  = "https://github.com/SayenaChat/Channel/releases/tag/";
+
+    /* Show github */
+    public function redirect ()
+    {
+        $c = $this->github.$this->version;
+        header("Location: $c");
+    }
 
     // Check exists get datas
     function check ($var)
@@ -93,7 +105,8 @@ class SayenaChannel
         $date = date("Y/m/d H:i:s");
         $access = hash("md5",$date);
         $this->query("INSERT INTO users (id,date,access) VALUES (NULL,'$date','$access');");
-        return $access;
+        $id = $this->array("SELECT id FROM users WHERE access='$access'")[0];
+        return "$id:$access";
     }
 }
 
