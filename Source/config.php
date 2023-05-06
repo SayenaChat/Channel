@@ -21,7 +21,7 @@ class SayenaChannel
     private $conn;
 
     /* Version */
-    public  $version = "0.2-beta";
+    public  $version = "0.3";
     public  $github  = "https://github.com/SayenaChat/Channel/releases/tag/";
 
     /* Show github */
