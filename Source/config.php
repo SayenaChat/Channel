@@ -90,13 +90,49 @@ class SayenaChannel
         $this->query("INSERT INTO chats (id,sender,giver,text,date) VALUES (NULL,'$sender','$to','$data','$time');");
     }
 
+    // Main Func: Reply Encrypted Message
+    public function Reply ()
+    {
+        $access = $_GET['access'];
+        $to = $_GET['to'];
+        $data = $_GET['data'];
+        $reply = $_GET['reply'];
+        $sender = $this->array("SELECT id FROM users WHERE access='$access';")[0];
+        $time = date("H:i");
+        $this->query("INSERT INTO chats (id,sender,giver,text,date,reply) VALUES (NULL,'$sender','$to','$data','$time','$reply');");
+    }
+
+    // Main Func: Edit Encrypted Message
+    public function Edit ()
+    {
+        $id = $_GET['id'];
+        $data = $_GET['data'];
+        $this->query("UPDATE chats SET data='$data',edited='1' WHERE id='$id'");
+    }
+
+    // Main Func: Delete Encrypted Message
+    public function Delete()
+    {
+        $id = $_GET['id'];
+        $this->query("DELETE FROM chats WHERE id='$id'");
+    }
+
+    // Main Func: Delete History
+    public function DeleteHistory ()
+    {
+        $access = $_GET['access'];
+        $to = $_GET['to'];
+        $sender = $this->array("SELECT id FROM users WHERE access='$access';")[0];
+        $this->assoc("DELETE FROM chats WHERE (sender='$sender' AND giver='$to') OR (sender='$to' AND giver='$sender')");
+    }
+
     // Main Func: Give all messages from another
     public function Give()
     {
         $to = $_GET['to'];
         $access = $_GET['access'];
         $sender = $this->array("SELECT id FROM users WHERE access='$access';")[0];
-        return $this->assoc("SELECT * FROM chats WHERE (sender='$sender' AND giver='$to') OR (sender='$to' AND giver='$sender');");
+        return $this->assoc("SELECT * FROM chats WHERE (sender='$sender' AND giver='$to') OR (sender='$to' AND giver='$sender') ORDER BY id DESC");
     }
 
     // Main Func: Connect to channel
