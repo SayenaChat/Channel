@@ -1,7 +1,7 @@
 --
 -- Sayena Chat Communication Channel
 -- (c) 2023 Sayena Team, Free Software MIT License
--- Sayena v0.2-beta
+-- Sayena v0.3-beta
 --
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";

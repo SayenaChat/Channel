@@ -2,7 +2,7 @@
 /*
  *  Sayena Chat Communication Channel
  *  (c) 2023 Sayena Team, Free Software MIT License
- *  Sayena v0.2-beta
+ *  Sayena v0.3-beta
  *
  *  send/  Send a message to another
  *  send/? secret=[secret-key]& access=[access-key]& to=[another-id] data=[encrypted-message]

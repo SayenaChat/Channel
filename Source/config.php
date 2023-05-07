@@ -2,7 +2,7 @@
 /*
  *  Sayena Chat Communication Channel
  *  (c) 2023 Sayena Team, Free Software MIT License
- *  Sayena v0.2-beta
+ *  Sayena v0.3-beta
  *
  *  config/  Configuration of SayenaChannel
  *
@@ -21,7 +21,7 @@ class SayenaChannel
     private $conn;
 
     /* Version */
-    public  $version = "0.3";
+    public  $version = "0.3-beta";
     public  $github  = "https://github.com/SayenaChat/Channel/releases/tag/";
 
     /* Show github */

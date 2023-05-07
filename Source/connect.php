@@ -2,7 +2,7 @@
 /*
  *  Sayena Chat Communication Channel
  *  (c) 2023 Sayena Team, Free Software MIT License
- *  Sayena v0.2-beta
+ *  Sayena v0.3-beta
  *
  *  connect/  Connect to channel
  *  connect/? secret=[secret-key]
